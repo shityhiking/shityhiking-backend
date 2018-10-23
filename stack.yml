@@ -7,6 +7,8 @@ functions:
     lang: python
     handler: ./meetup-client
     image: meetup-client:latest
+    environment:
+        secrets_mount_path: "/var/run/secrets/"
     environment_file:
          - meetup.yml
     secrets:
