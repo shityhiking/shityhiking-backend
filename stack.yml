@@ -1,0 +1,15 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  meetup-client:
+    lang: python
+    handler: ./meetup-client
+    image: meetup-client:latest
+    environment_file:
+         - meetup.yml
+    secrets:
+         - refresh_token
+           #         - consumer-secret
+        
